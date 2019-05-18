@@ -1,25 +1,27 @@
-all: html
+all: subdirectories download html
 
 subdirectories:
 	@mkdir files ||:
 	@mkdir html_files ||:
 
 # TODO: make this generic for multiple years.
+# Target: *.zip
+# Append to the openev url.
 download: subdirectories
 	wget -P files/ https://s3.amazonaws.com/openev/2014OpenEv.zip
 	unzip -d files files/2014OpenEv.zip
-	rm files/*.zip
+	bash remove-spaces.sh
 
 html:
 	bash files-to-html.sh
 
-html_parallel: build_go
+html-parallel: build-go
 	./parallel-files-to-html $(find files/*.docx)
 
 zip:
 	zip html_files.zip -r html_files
 
-build_go:
+build-go:
 	go build parallel-files-to-html.go
 
 clean:
