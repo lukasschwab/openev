@@ -1,2 +1,7 @@
+# Resources
 files/*
 html_files/*
+*.zip
+
+# Go binary
+parallel-files-to-html
