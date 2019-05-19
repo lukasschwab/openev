@@ -7,7 +7,7 @@ subdirectories:
 %.zip: subdirectories
 	wget https://s3.amazonaws.com/openev/$@
 	unzip -d files $@
-	bash remove-spaces.sh
+	detox files
 
 html:
 	bash files-to-html.sh

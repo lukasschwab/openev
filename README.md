@@ -4,10 +4,13 @@ OpenEvidence file preprocessing tools: convert years of policy debate files to H
 
 + [2014/2015](https://drive.google.com/file/d/1XDI5tTGBkazWg7BsRx82OPfhFwica8m3/view)
 + [2015/2016](https://drive.google.com/file/d/1bfau5bJqNroIaLLldRjgJxkX-oDYOqxf/view)
++ [2016/2017](https://drive.google.com/open?id=1rSqyhrghSrqcad86-yaEwMPjh8QOdBKJ)
++ [2017/2018](TODO )
 
 ## Requirements
 
-1. [Pandoc](https://pandoc.org/installing.html)
+1. [`pandoc`](https://pandoc.org/installing.html)
+2. [`detox`](https://formulae.brew.sh/formula/detox). Can use [a workaround](https://serverfault.com/questions/348482/how-to-remove-invalid-characters-from-filenames#comment906110_348485) to sanitize filenames if `detox` is unavailable.
 2. Go (optional)
 
 ## Getting started
