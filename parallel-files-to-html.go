@@ -19,7 +19,7 @@ func main() {
 	for i := range targets {
 		from[i] = targets[i]
 	}
-	poolmap.Map(from, pandocConvertToHTML, 4)
+	poolmap.Map(from, pandocConvertToHTML, 4, false)
 }
 
 func pandocConvertToHTML(path interface{}) (interface{}, error) {
