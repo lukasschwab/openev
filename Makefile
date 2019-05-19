@@ -13,13 +13,13 @@ html:
 	bash files-to-html.sh
 
 FILES = $(shell find files/*.docx)
-html-parallel: build-go
+html-parallel: parallel-files-to-html
 	@./parallel-files-to-html $(FILES)
 
 zip:
 	zip html_files.zip -r html_files
 
-build-go:
+parallel-files-to-html: parallel-files-to-html.go
 	go build parallel-files-to-html.go
 
 clean:
