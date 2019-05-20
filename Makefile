@@ -1,13 +1,15 @@
 all: html-parallel
 
 subdirectories:
-	@mkdir files ||:
-	@mkdir html_files ||:
+	@mkdir -p files
+	@mkdir -p html_files
 
 %.zip: subdirectories
 	wget https://s3.amazonaws.com/openev/$@
 	unzip -d files $@
 	detox files
+	# Remove nondetoxed (duplicate name) files.
+	rm -f files/*\ *.docx
 
 html:
 	bash files-to-html.sh
